@@ -1,0 +1,47 @@
+{
+  "name": "Goods",
+  "table": { "name": "goods", "comment": "Goods" },
+  "columns": [
+    { "name": "id", "comment": "ID", "type": "ID", "label": "ID" },
+    {
+      "label": "Good Name",
+      "name": "good_name",
+      "comment": "Name of the good",
+      "type": "string",
+      "length": 255,
+      "nullable": false
+    },
+    {
+      "label": "Category ID",
+      "name": "category_id",
+      "comment": "ID of the category",
+      "type": "integer",
+      "nullable": false,
+      "index": true
+    },
+    {
+      "label": "Price",
+      "name": "price",
+      "comment": "Price of the good",
+      "type": "decimal",
+      "precision": 10,
+      "scale": 2,
+      "nullable": false
+    },
+    {
+      "label": "Stock Quantity",
+      "name": "stock_quantity",
+      "comment": "Stock quantity of the good",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "comment": "Description of the good",
+      "type": "text",
+      "nullable": true
+    }
+  ],
+  "option": { "timestamps": true }
+}

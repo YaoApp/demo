@@ -1,0 +1,23 @@
+{
+  "name": "Pet Category",
+  "table": { "name": "pet_categories", "comment": "Pet Categories" },
+  "columns": [
+    { "name": "id", "comment": "ID", "type": "ID", "label": "ID" },
+    {
+      "label": "Category Name",
+      "name": "category_name",
+      "comment": "Name of the pet category",
+      "type": "string",
+      "length": 255,
+      "nullable": false
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "comment": "Description of the pet category",
+      "type": "text",
+      "nullable": true
+    }
+  ],
+  "option": { "timestamps": true }
+}

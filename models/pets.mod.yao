@@ -1,0 +1,46 @@
+{
+  "name": "Pet",
+  "table": { "name": "pets", "comment": "Pets" },
+  "columns": [
+    { "name": "id", "comment": "ID", "type": "ID", "label": "ID" },
+    {
+      "label": "Pet Name",
+      "name": "pet_name",
+      "comment": "Name of the pet",
+      "type": "string",
+      "length": 255,
+      "nullable": false
+    },
+    {
+      "label": "Category ID",
+      "name": "category_id",
+      "comment": "ID of the pet category",
+      "type": "integer",
+      "nullable": false,
+      "index": true
+    },
+    {
+      "label": "Age",
+      "name": "age",
+      "comment": "Age of the pet",
+      "type": "integer",
+      "nullable": true
+    },
+    {
+      "label": "Breed",
+      "name": "breed",
+      "comment": "Breed of the pet",
+      "type": "string",
+      "length": 255,
+      "nullable": true
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "comment": "Description of the pet",
+      "type": "text",
+      "nullable": true
+    }
+  ],
+  "option": { "timestamps": true }
+}

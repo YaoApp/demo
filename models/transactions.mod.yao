@@ -1,0 +1,47 @@
+{
+  "name": "Transaction",
+  "table": { "name": "transactions", "comment": "Transactions" },
+  "columns": [
+    { "name": "id", "comment": "ID", "type": "ID", "label": "ID" },
+    {
+      "label": "Pet ID",
+      "name": "pet_id",
+      "comment": "ID of the pet involved in the transaction",
+      "type": "integer",
+      "nullable": true,
+      "index": true
+    },
+    {
+      "label": "Good ID",
+      "name": "good_id",
+      "comment": "ID of the good involved in the transaction",
+      "type": "integer",
+      "nullable": true,
+      "index": true
+    },
+    {
+      "label": "Transaction Date",
+      "name": "transaction_date",
+      "comment": "Date of the transaction",
+      "type": "datetime",
+      "nullable": false
+    },
+    {
+      "label": "Quantity",
+      "name": "quantity",
+      "comment": "Quantity involved in the transaction",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "label": "Total Price",
+      "name": "total_price",
+      "comment": "Total price of the transaction",
+      "type": "decimal",
+      "precision": 10,
+      "scale": 2,
+      "nullable": false
+    }
+  ],
+  "option": { "timestamps": true }
+}
