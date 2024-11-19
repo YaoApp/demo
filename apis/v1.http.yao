@@ -1,0 +1,23 @@
+{
+  "name": "Pet Store API",
+  "version": "1.0.0",
+  "description": "API to manage pet data",
+  "paths": [
+    {
+      "path": "/pets",
+      "method": "GET",
+      "process": "models.pets.Paginate",
+      "guard": "-",
+      "in": [":query-param", "$query.page", "$query.pagesize"],
+      "out": { "status": 200, "type": "application/json" }
+    },
+    {
+      "path": "/pets/:id",
+      "method": "GET",
+      "process": "models.pets.Find",
+      "guard": "-",
+      "in": ["$param.id", ":query-param"],
+      "out": { "status": 200, "type": "application/json" }
+    }
+  ]
+}
