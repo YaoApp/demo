@@ -10,6 +10,15 @@
       "guard": "-",
       "in": [":query-param", "$query.page", "$query.pagesize"],
       "out": { "status": 200, "type": "application/json" }
+    },
+    // Add a new endpoint to fetch category options
+    {
+      "path": "/categories/options",
+      "method": "GET",
+      "process": "scripts.pet.FetchCategoryOptions",
+      "guard": "-",
+      "in": [],
+      "out": { "status": 200, "type": "application/json" }
     }
   ]
 }
