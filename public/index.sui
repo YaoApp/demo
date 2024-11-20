@@ -14,7 +14,7 @@
 
 
 <script name="config" type="json">
-{"title":"","guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null,"root":"/"}
+{"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0}
 </script>
 
 
