@@ -27,13 +27,25 @@
   
 
 <script s:ns="ns_3549b159362e9bdf" s:cn="comp__pet_index" s:hash="script_12db1546e768baef" type="text/javascript">
+this.Constants = {}
 this.root=document.body;const __self=this;this.store=new __sui_store(this.root),this.state=new __sui_state(this),this.props=new __sui_props(this.root),this.$root=new __Query(this.root),this.find=function(t){return new __Query(__self.root).find(t)},this.query=function(t){return __self.root.querySelector(t)},this.queryAll=function(t){return __self.root.querySelectorAll(t)},this.render=function(t,e,n){return new __Render(__self,n).Exec(t,e)},this.emit=function(t,e){const n=new CustomEvent(t,{detail:e});__self.root.dispatchEvent(n)};const self=this;self.viewDetails=(t,e,n)=>{const o=e.id;window.location.href=`/pet/${o}`},this.root.getAttribute("initialized")!="true"&&(__self.root.setAttribute("initialized","true"),__self.root.addEventListener("state:change",function(t){const e=this.getAttribute("s:cn"),n=t.detail.target,o=t.detail.key,i=t.detail.value,s=new window[e](this);new __sui_state(s).Set(o,i,n)}),__self.once&&__self.once());
 
 </script>
 
 
 <script name="config" type="json">
-{"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0}
+{"guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null,"root":"/","title":""}
+</script>
+
+
+
+<script name="data" type="json">
+{
+  "$pets": "@PetList",
+  "$ping": "utils.app.ping",
+  "foo": { "hello": "world" }
+}
+
 </script>
 
 

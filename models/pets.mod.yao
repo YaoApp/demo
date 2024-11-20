@@ -42,5 +42,14 @@
       "nullable": true
     }
   ],
+  "relations": {
+    // category: the relation name
+    "category": {
+      "type": "hasOne", // the relation type, hasOne or hasMany
+      "model": "pet.categories", // the relation model widget ID
+      "foreign": "category_id", // the foreign key in the current model
+      "key": "id" // the primary key in the related model
+    }
+  },
   "option": { "timestamps": true }
 }

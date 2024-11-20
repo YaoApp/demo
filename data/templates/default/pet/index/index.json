@@ -1,0 +1,5 @@
+{
+  "$pets": "@PetList",
+  "$ping": "utils.app.ping",
+  "foo": { "hello": "world" }
+}
