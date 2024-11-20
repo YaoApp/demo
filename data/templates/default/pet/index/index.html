@@ -1,0 +1,12 @@
+<!-- index.html -->
+<div class="pet-list">
+  <div s:for="pets" s:for-item="pet" class="pet-item">
+    <h2>{{ pet.pet_name }}</h2>
+    <p>Category: {{ pet.category_name }}</p>
+    <p s:if="pet.age">Age: {{ pet.age }}</p>
+    <p s:if="pet.breed">Breed: {{ pet.breed }}</p>
+    <button s:on-click="viewDetails" s:data-id="{{ pet.id }}">
+      View Details
+    </button>
+  </div>
+</div>

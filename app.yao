@@ -4,5 +4,13 @@
   "description": "Another yao application",
   "version": "0.10.4",
   "adminRoot": "admin",
+  "public": {
+    "rewrite": [
+      { "^\\/assets\\/(.*)$": "/assets/$1" }, // SUI assets
+      { "^\\/pet/index$": "/pet/index.sui" }, // Index page
+      { "^\\/pet/(.*)$": "/pet/[id].sui" }, // SUI Documentation Detail
+      { "^\\/(.*)$": "/$1.sui" } // File system route
+    ]
+  },
   "optional": { "remoteCache": true }
 }
