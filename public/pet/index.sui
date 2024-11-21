@@ -5,12 +5,43 @@
     <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type"/>
     <meta name="description" content="SUI Flowbite Startup"/>
   <script s:ns="" s:cn="" s:hash="script_5f50a1db8f374703" src="/assets/libsui.min.js" type="text/javascript" name="libsui"></script>
-<style s:ns="ns_3549b159362e9bdf" s:cn="__page" rel="stylesheet" type="text/css">
-@import"/assets/style.css";.pet-list{display:flex;flex-wrap:wrap;gap:16px}.pet-item{border:1px solid #ccc;padding:16px;border-radius:8px;transition:transform .3s}.pet-item:hover{transform:scale(1.05)}button{background-color:#007bff;color:#fff;border:none;padding:8px 16px;border-radius:4px;cursor:pointer}button:hover{background-color:#0056b3}
+<style s:ns="page__pet_index_2" s:cn="__page" rel="stylesheet" type="text/css">
+/* index.css */
+@import "/assets/style.css";
+
+.pet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pet-item {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.pet-item:hover {
+  transform: scale(1.05);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 
 </style>
 </head>
-  <body s:ns="ns_3549b159362e9bdf" s:public="/" s:assets="/assets">
+  <body s:ns="page__pet_index_2" s:public="/" s:assets="/assets">
     <div class="container"><!-- index.html -->
 <div class="pet-list">
   <div s:for="pets" s:for-item="pet" class="pet-item">
@@ -18,7 +49,7 @@
     <p>Category: {{ pet.category_name }}</p>
     <p s:if="pet.age">Age: {{ pet.age }}</p>
     <p s:if="pet.breed">Breed: {{ pet.breed }}</p>
-    <button s:on-click="viewDetails" data:id="{{ pet.id }}" s:event="ns_3549b159362e9bdf-2" s:event-cn="__page">
+    <button s:on-click="viewDetails" data:id="{{ pet.id }}" s:event="page__pet_index_2-2" s:event-cn="__page">
       View Details
     </button>
   </div>
@@ -26,15 +57,55 @@
 </div>
   
 
-<script s:ns="ns_3549b159362e9bdf" s:cn="comp__pet_index" s:hash="script_12db1546e768baef" type="text/javascript">
+<script s:ns="page__pet_index_2" s:cn="comp__pet_index" s:hash="script_12db1546e768baef" type="text/javascript">
 this.Constants = {}
-this.root=document.body;const __self=this;this.store=new __sui_store(this.root),this.state=new __sui_state(this),this.props=new __sui_props(this.root),this.$root=new __Query(this.root),this.find=function(t){return new __Query(__self.root).find(t)},this.query=function(t){return __self.root.querySelector(t)},this.queryAll=function(t){return __self.root.querySelectorAll(t)},this.render=function(t,e,n){return new __Render(__self,n).Exec(t,e)},this.emit=function(t,e){const n=new CustomEvent(t,{detail:e});__self.root.dispatchEvent(n)};const self=this;self.viewDetails=(t,e,n)=>{const o=e.id;window.location.href=`/pet/${o}`},this.root.getAttribute("initialized")!="true"&&(__self.root.setAttribute("initialized","true"),__self.root.addEventListener("state:change",function(t){const e=this.getAttribute("s:cn"),n=t.detail.target,o=t.detail.key,i=t.detail.value,s=new window[e](this);new __sui_state(s).Set(o,i,n)}),__self.once&&__self.once());
+this.root = document.body;
+const __self = this;
+this.store = new __sui_store(this.root);
+this.state = new __sui_state(this);
+this.props = new __sui_props(this.root);
+this.$root = new __Query(this.root);
+this.find = function(selector) {
+  return new __Query(__self.root).find(selector);
+};
+this.query = function(selector) {
+  return __self.root.querySelector(selector);
+};
+this.queryAll = function(selector) {
+  return __self.root.querySelectorAll(selector);
+};
+this.render = function(name, data, option) {
+  const r = new __Render(__self, option);
+  return r.Exec(name, data);
+};
+this.emit = function(name, data) {
+  const event = new CustomEvent(name, { detail: data });
+  __self.root.dispatchEvent(event);
+};
+const self = this;
+self.viewDetails = (event, data, detail) => {
+  const petId = data["id"];
+  window.location.href = `/pet/${petId}`;
+};
+if (this.root.getAttribute("initialized") != "true") {
+  __self.root.setAttribute("initialized", "true");
+  __self.root.addEventListener("state:change", function(event) {
+    const name = this.getAttribute("s:cn");
+    const target = event.detail.target;
+    const key = event.detail.key;
+    const value = event.detail.value;
+    const component = new window[name](this);
+    const state = new __sui_state(component);
+    state.Set(key, value, target);
+  });
+  __self.once && __self.once();
+}
 
 </script>
 
 
 <script name="config" type="json">
-{"dataCache":0,"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0}
+{"title":"","guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null,"root":"/"}
 </script>
 
 
