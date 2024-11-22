@@ -1,12 +1,5 @@
 <div>
-  <nav>
-    <a href="/">Company Logo</a>
-    <a href="/pet/index">Pet List</a>
-    <input type="text" placeholder="Search..." />
-    <a href="/signin">Sign In</a>
-    <a href="/signup">Sign Up</a>
-  </nav>
-
+  <header is="/pet/header" active="/list"></header>
   <main>
     <div s:for="pets" s:for-item="pet" class="card">
       <h2>{{ pet.pet_name }}</h2>
@@ -16,8 +9,5 @@
       </button>
     </div>
   </main>
-
-  <footer>
-    <p>Company Name &copy; 2023</p>
-  </footer>
+  <footer is="/pet/footer" name="Pet List"></footer>
 </div>

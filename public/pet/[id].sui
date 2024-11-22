@@ -12,13 +12,13 @@
 </head>
   <body s:ns="ns_6c60eb8109d79712" s:public="/" s:assets="/assets">
     <div class="container"><div>
-  <nav>
-    <a href="/">Company Logo</a>
-    <a href="/pet/index">Pet List</a>
-    <input type="text" placeholder="Search..."/>
-    <a href="/signin">Sign In</a>
-    <a href="/signup">Sign Up</a>
-  </nav>
+  <nav s:public="/" s:assets="/assets" prop:active="/list" s:ns="ns_dd171132f55103d6" s:cn="comp__pet_header" s:ready="comp__pet_header()" s:parent="ns_6c60eb8109d79712">
+  <a href="/">Company Logo</a>
+  <a href="/pet/index">Pet List</a>
+  <input type="text" placeholder="Search..."/>
+  <a href="/signin">Sign In</a>
+  <a href="/signup">Sign Up</a>
+</nav>
 
   <main>
     <div class="breadcrumb">
@@ -32,10 +32,10 @@
       <p>Description: {{ pet.description }}</p>
     </div>
   </main>
+  <footer s:public="/" s:assets="/assets" prop:name="Pet Details" s:ns="ns_12bd45cf875583d3" s:cn="comp__pet_footer" s:ready="comp__pet_footer()" s:parent="ns_6c60eb8109d79712">
+  <p>Company Name © 2023 Pet Details</p>
+</footer>
 
-  <footer>
-    <p>Company Name © 2023</p>
-  </footer>
 </div>
 </div>
   
@@ -48,7 +48,7 @@ this.root=document.body;const __self=this;this.store=new __sui_store(this.root),
 
 
 <script name="config" type="json">
-{"title":"","guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null,"root":"/"}
+{"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0}
 </script>
 
 
@@ -67,6 +67,12 @@ this.root=document.body;const __self=this;this.store=new __sui_store(this.root),
   "title": "Yao Demo App"
 }
 
+</script>
+
+
+
+<script name="imports" type="json">
+{"comp__pet_header":"/pet/header","comp__pet_footer":"/pet/footer"}
 </script>
 
 </body></html>

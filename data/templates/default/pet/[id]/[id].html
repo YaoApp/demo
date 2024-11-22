@@ -1,12 +1,5 @@
 <div>
-  <nav>
-    <a href="/">Company Logo</a>
-    <a href="/pet/index">Pet List</a>
-    <input type="text" placeholder="Search..." />
-    <a href="/signin">Sign In</a>
-    <a href="/signup">Sign Up</a>
-  </nav>
-
+  <header is="/pet/header" active="/list"></header>
   <main>
     <div class="breadcrumb">
       <a href="/pet/index">Back to Pet List</a>
@@ -19,8 +12,5 @@
       <p>Description: {{ pet.description }}</p>
     </div>
   </main>
-
-  <footer>
-    <p>Company Name &copy; 2023</p>
-  </footer>
+  <footer is="/pet/footer" name="Pet Details"></footer>
 </div>

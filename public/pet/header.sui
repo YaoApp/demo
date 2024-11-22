@@ -6,15 +6,21 @@
     <meta name="description" content="SUI Flowbite Startup"/>
   <script s:ns="" s:cn="" s:hash="script_5f50a1db8f374703" src="/assets/libsui.min.js" type="text/javascript" name="libsui"></script>
 </head>
-  <body s:ns="ns_a17c1dec10d62df5" s:public="/" s:assets="/assets">
-    <div class="container"><div>Hi, Here is the default index page of SUI Template Engine.</div>
+  <body s:ns="ns_dd171132f55103d6" s:public="/" s:assets="/assets">
+    <div class="container"><nav>
+  <a href="/">Company Logo</a>
+  <a href="/pet/index">Pet List</a>
+  <input type="text" placeholder="Search..."/>
+  <a href="/signin">Sign In</a>
+  <a href="/signup">Sign Up</a>
+</nav>
 </div>
   
 
 
 
 <script name="config" type="json">
-{"dataCache":0,"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0}
+{"title":"","guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null,"root":"/"}
 </script>
 
 
