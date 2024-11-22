@@ -6,7 +6,7 @@
     <meta name="description" content="SUI Flowbite Startup"/>
   <script s:ns="" s:cn="" s:hash="script_5f50a1db8f374703" src="/assets/libsui.min.js" type="text/javascript" name="libsui"></script>
 </head>
-  <body s:ns="page__index_2" s:public="/" s:assets="/assets">
+  <body s:ns="ns_a17c1dec10d62df5" s:public="/" s:assets="/assets">
     <div class="container"><div>Hi, Here is the default index page of SUI Template Engine.</div>
 </div>
   
@@ -14,7 +14,7 @@
 
 
 <script name="config" type="json">
-{"cache":0,"dataCache":0,"api":null,"root":"/","title":"","guard":"","cacheStore":""}
+{"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0}
 </script>
 
 

@@ -1,16 +1,60 @@
 /* style.css */
+:root {
+  --primary-color: #4a90e2; /* Friendly blue */
+  --secondary-color: #f5a623; /* Warm orange */
+  --background-color: #f7f7f7;
+  --font-color: #333;
+  --font-family: "Arial, sans-serif";
+  --button-radius: 8px;
+  --card-radius: 12px;
+  --card-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
 }
 
-h1,
-h2 {
-  color: #007bff;
+nav,
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
 }
 
-p {
-  margin: 8px 0;
+nav a,
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover,
+footer a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--button-radius);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+.card {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
 }

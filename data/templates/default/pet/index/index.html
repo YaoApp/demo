@@ -1,12 +1,23 @@
-<!-- index.html -->
-<div class="pet-list">
-  <div s:for="pets" s:for-item="pet" class="pet-item">
-    <h2>{{ pet.pet_name }}</h2>
-    <p>Category: {{ pet.category_name }}</p>
-    <p s:if="pet.age">Age: {{ pet.age }}</p>
-    <p s:if="pet.breed">Breed: {{ pet.breed }}</p>
-    <button s:on-click="viewDetails" s:data-id="{{ pet.id }}">
-      View Details
-    </button>
-  </div>
+<div>
+  <nav>
+    <a href="/">Company Logo</a>
+    <a href="/pet/index">Pet List</a>
+    <input type="text" placeholder="Search..." />
+    <a href="/signin">Sign In</a>
+    <a href="/signup">Sign Up</a>
+  </nav>
+
+  <main>
+    <div s:for="pets" s:for-item="pet" class="card">
+      <h2>{{ pet.pet_name }}</h2>
+      <p>Category: {{ pet.category.category_name }}</p>
+      <button s:on-click="viewDetails" s:data-id="{{ pet.id }}">
+        View Details
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Company Name &copy; 2023</p>
+  </footer>
 </div>

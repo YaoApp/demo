@@ -1,32 +1,10 @@
-/* index.css */
 @import "@assets/style.css";
 
-.pet-list {
+/* Specific styles for the index page */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-}
-
-.pet-item {
-  border: 1px solid #ccc;
-  padding: 16px;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.pet-item:hover {
-  transform: scale(1.05);
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+  justify-content: center;
 }

@@ -5,86 +5,44 @@
     <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type"/>
     <meta name="description" content="SUI Flowbite Startup"/>
   <script s:ns="" s:cn="" s:hash="script_5f50a1db8f374703" src="/assets/libsui.min.js" type="text/javascript" name="libsui"></script>
-<style s:ns="page__pet__id__2" s:cn="__page" rel="stylesheet" type="text/css">
-/* [id].css */
-@import "/assets/style.css";
-
-.pet-details {
-  padding: 24px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
+<style s:ns="ns_6c60eb8109d79712" s:cn="__page" rel="stylesheet" type="text/css">
+@import"/assets/style.css";main{max-width:800px;margin:0 auto;padding:20px}.breadcrumb{margin-bottom:20px}
 
 </style>
 </head>
-  <body s:ns="page__pet__id__2" s:public="/" s:assets="/assets">
-    <div class="container"><!-- [id].html -->
-<div class="pet-details">
-  <h1>{{ pet.pet_name }}</h1>
-  <p>Category: {{ pet.category_name }}</p>
-  <p s:if="pet.age">Age: {{ pet.age }}</p>
-  <p s:if="pet.breed">Breed: {{ pet.breed }}</p>
-  <p s:if="pet.description">{{ pet.description }}</p>
-  <button s:on-click="goBack" s:event="page__pet__id__2-2" s:event-cn="__page">Back to List</button>
+  <body s:ns="ns_6c60eb8109d79712" s:public="/" s:assets="/assets">
+    <div class="container"><div>
+  <nav>
+    <a href="/">Company Logo</a>
+    <a href="/pet/index">Pet List</a>
+    <input type="text" placeholder="Search..."/>
+    <a href="/signin">Sign In</a>
+    <a href="/signup">Sign Up</a>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/pet/index">Back to Pet List</a>
+    </div>
+    <div class="card">
+      <h2>{{ pet.pet_name }}</h2>
+      <p>Category: {{ pet.category.category_name }}</p>
+      <p>Age: {{ pet.age }}</p>
+      <p>Breed: {{ pet.breed }}</p>
+      <p>Description: {{ pet.description }}</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Company Name © 2023</p>
+  </footer>
 </div>
 </div>
   
 
-<script s:ns="page__pet__id__2" s:cn="comp__pet__id_" s:hash="script_c497c5aeae4ba858" type="text/javascript">
+<script s:ns="ns_6c60eb8109d79712" s:cn="comp__pet__id_" s:hash="script_c497c5aeae4ba858" type="text/javascript">
 this.Constants = {}
-this.root = document.body;
-const __self = this;
-this.store = new __sui_store(this.root);
-this.state = new __sui_state(this);
-this.props = new __sui_props(this.root);
-this.$root = new __Query(this.root);
-this.find = function(selector) {
-  return new __Query(__self.root).find(selector);
-};
-this.query = function(selector) {
-  return __self.root.querySelector(selector);
-};
-this.queryAll = function(selector) {
-  return __self.root.querySelectorAll(selector);
-};
-this.render = function(name, data, option) {
-  const r = new __Render(__self, option);
-  return r.Exec(name, data);
-};
-this.emit = function(name, data) {
-  const event = new CustomEvent(name, { detail: data });
-  __self.root.dispatchEvent(event);
-};
-const self = this;
-self.goBack = () => {
-  window.location.href = `/`;
-};
-if (this.root.getAttribute("initialized") != "true") {
-  __self.root.setAttribute("initialized", "true");
-  __self.root.addEventListener("state:change", function(event) {
-    const name = this.getAttribute("s:cn");
-    const target = event.detail.target;
-    const key = event.detail.key;
-    const value = event.detail.value;
-    const component = new window[name](this);
-    const state = new __sui_state(component);
-    state.Set(key, value, target);
-  });
-  __self.once && __self.once();
-}
+this.root=document.body;const __self=this;this.store=new __sui_store(this.root),this.state=new __sui_state(this),this.props=new __sui_props(this.root),this.$root=new __Query(this.root),this.find=function(t){return new __Query(__self.root).find(t)},this.query=function(t){return __self.root.querySelector(t)},this.queryAll=function(t){return __self.root.querySelectorAll(t)},this.render=function(t,e,o){return new __Render(__self,o).Exec(t,e)},this.emit=function(t,e){const o=new CustomEvent(t,{detail:e});__self.root.dispatchEvent(o)},this.root.getAttribute("initialized")!="true"&&(__self.root.setAttribute("initialized","true"),__self.root.addEventListener("state:change",function(t){const e=this.getAttribute("s:cn"),o=t.detail.target,n=t.detail.key,i=t.detail.value,s=new window[e](this);new __sui_state(s).Set(n,i,o)}),__self.once&&__self.once());
 
 </script>
 
