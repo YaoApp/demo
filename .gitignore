@@ -1,3 +1,5 @@
 db/
 logs/
 moapi.env.sh
+data/*
+!data/templates

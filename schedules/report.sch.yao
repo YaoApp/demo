@@ -1,0 +1,7 @@
+{
+  "name": "Generate Report at 23:59",
+  "schedule": " */1 * * * *", //  */1 * * * * for every minute, test only
+  // "schedule": "0 59 23 * * *",
+  "process": "scripts.schedules.report.Generate",
+  "args": []
+}
