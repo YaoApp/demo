@@ -1,3 +1,7 @@
+// Yao Runtime dependency
+// This file is used for type checking and code completion in the IDE only
+// It is not used in the Yao runtime
+
 export function Process(name: string, ...args: any): any {
   return null;
 }
@@ -353,3 +357,85 @@ export type UploadFileResponse =
 type ReadCloser = number;
 
 type MimeType = string;
+
+export type LoadOption = {
+  action: "start" | "run" | "migrate";
+  ignoredAfterLoad: boolean;
+  reload: boolean;
+};
+
+export type MigrateOption = {
+  mode: "production" | "development";
+  force: boolean;
+  reset: boolean;
+};
+
+/**
+ * Neo Type Definitions
+ */
+export namespace neo {
+  export interface Context {
+    sid?: string;
+    path: string;
+    stack: string;
+    namespace: string;
+    formdata: Record<string, any>;
+    config: Record<string, any>;
+    field: Field;
+    signal: any;
+  }
+
+  export interface Message {
+    name?: string;
+    sid?: string;
+    content: string;
+    role: string;
+  }
+
+  export interface Response {
+    text?: string;
+    error?: string;
+    done?: boolean;
+    confirm?: boolean;
+    command?: Command | null;
+    actions?: Action[];
+    data?: Record<string, any>;
+  }
+
+  export interface Command {
+    id?: string;
+    name?: string;
+    request?: string;
+  }
+
+  export interface Action {
+    name?: string;
+    type: string;
+    payload?: any;
+    next?: string;
+  }
+
+  export interface Field {
+    bind: string;
+    value: any;
+  }
+
+  export interface IAgent {
+    Prepare: (context: Context, messages: Message[]) => Message[];
+    Write: (
+      context: Context,
+      messages: Message[],
+      response: Response,
+      content?: string,
+      writer?: io.ResponseWriter
+    ) => Response[];
+  }
+}
+
+export namespace io {
+  export type Writer = object;
+  export type Reader = object;
+  export type ReadCloser = object;
+  export type WriteCloser = object;
+  export type ResponseWriter = object;
+}
