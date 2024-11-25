@@ -2,10 +2,10 @@
 {
   "name": "Pets",
   "action": {
-    "bind": {
-      "model": "pets",
-      "option": { "form": "pets" }
-    }
+    "bind": { "model": "pets", "option": { "form": "pets" } },
+    "before:search": "scripts.pet.BeforeSearch", // Before Search Hook
+    "after:search": "scripts.pet.AfterSearch", // After Search Hook
+    "save": { "process": "scripts.pet.Save" }
   },
   "layout": {
     "header": {},

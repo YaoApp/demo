@@ -33,6 +33,7 @@ export type Option = {
   [key: string]: any;
 };
 
+export type QueryParam = QueryParams;
 export type QueryParams = {
   wheres?: Where[];
   orders?: Order[];
