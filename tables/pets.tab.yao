@@ -1,0 +1,158 @@
+// pets.tab.yao
+{
+  "name": "Pets",
+  "action": {
+    "bind": {
+      "model": "pets",
+      "option": { "form": "pets" }
+    }
+  },
+  "layout": {
+    "header": {},
+    "primary": "id",
+    "filter": {
+      "columns": [
+        { "name": "Pet Name" },
+        { "name": "Category ID" },
+        { "name": "Age" },
+        { "name": "Breed" }
+      ],
+      "actions": [
+        {
+          "title": "Add Pet",
+          "icon": "icon-plus",
+          "style": "primary",
+          "action": [
+            {
+              "name": "openModal",
+              "type": "Common.openModal",
+              "payload": {
+                "byDrawer": { "mask": true },
+                "Form": { "type": "add", "model": "pets" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "table": {
+      "columns": [
+        { "name": "ID", "width": 60 },
+        { "name": "Pet Name", "width": 200 },
+        { "name": "Category ID", "width": 120 },
+        { "name": "Age", "width": 60 },
+        { "name": "Breed", "width": 150 },
+        { "name": "Description", "width": 300 }
+      ],
+      "operation": {
+        "fold": false,
+        "actions": [
+          {
+            "style": "primary",
+            "title": "Edit",
+            "icon": "icon-edit-2",
+            "action": [
+              {
+                "name": "openModal",
+                "type": "Common.openModal",
+                "payload": {
+                  "byDrawer": { "mask": true },
+                  "Form": {
+                    "type": "edit",
+                    "model": "pets",
+                    "params": { "id": "{{id}}" }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "style": "danger",
+            "title": "Delete",
+            "icon": "icon-trash-2",
+            "action": [
+              {
+                "name": "Confirm",
+                "type": "Common.confirm",
+                "payload": {
+                  "title": "Please confirm to delete [{{ pet_name }}]",
+                  "content": "This action is irreversible! The pet will be permanently deleted."
+                }
+              },
+              { "name": "Delete", "type": "Table.delete", "payload": {} }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "fields": {
+    "filter": {
+      "Pet Name": {
+        "bind": "where.pet_name.match",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Pet Name" }
+        }
+      },
+      "Category ID": {
+        "bind": "where.category_id.eq",
+        "edit": {
+          "type": "InputNumber",
+          "props": { "placeholder": "Category ID" }
+        }
+      },
+      "Age": {
+        "bind": "where.age.eq",
+        "edit": {
+          "type": "InputNumber",
+          "props": { "placeholder": "Age" }
+        }
+      },
+      "Breed": {
+        "bind": "where.breed.match",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Breed" }
+        }
+      }
+    },
+    "table": {
+      "ID": {
+        "bind": "id",
+        "view": { "type": "Text" }
+      },
+      "Pet Name": {
+        "bind": "pet_name",
+        "view": { "type": "Text", "props": { "weight": "medium" } },
+        "edit": { "type": "Input", "props": { "placeholder": "Pet Name" } }
+      },
+      "Category ID": {
+        "bind": "category_id",
+        "view": { "type": "Text" },
+        "edit": {
+          "type": "InputNumber",
+          "props": { "placeholder": "Category ID" }
+        }
+      },
+      "Age": {
+        "bind": "age",
+        "view": { "type": "Text" },
+        "edit": { "type": "InputNumber", "props": { "placeholder": "Age" } }
+      },
+      "Breed": {
+        "bind": "breed",
+        "view": { "type": "Text" },
+        "edit": { "type": "Input", "props": { "placeholder": "Breed" } }
+      },
+      "Description": {
+        "bind": "description",
+        "view": { "type": "Text" },
+        "edit": {
+          "type": "TextArea",
+          "props": { "placeholder": "Description" }
+        }
+      }
+    }
+  }
+}

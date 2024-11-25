@@ -1,0 +1,111 @@
+// pet/category.tab.yao
+{
+  "name": "Pet Categories",
+  "action": {
+    "bind": {
+      "model": "pet.categories",
+      "option": { "form": "pet.categories" }
+    }
+  },
+  "layout": {
+    "header": {},
+    "primary": "id",
+    "filter": {
+      "columns": [{ "name": "Category Name" }],
+      "actions": [
+        {
+          "title": "Add Category",
+          "icon": "icon-plus",
+          "style": "primary",
+          "action": [
+            {
+              "name": "openModal",
+              "type": "Common.openModal",
+              "payload": {
+                "byDrawer": { "mask": true },
+                "Form": { "type": "add", "model": "pet.categories" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "table": {
+      "columns": [
+        { "name": "ID", "width": 60 },
+        { "name": "Category Name", "width": 200 },
+        { "name": "Description", "width": 300 }
+      ],
+      "operation": {
+        "fold": false,
+        "actions": [
+          {
+            "style": "primary",
+            "title": "Edit",
+            "icon": "icon-edit-2",
+            "action": [
+              {
+                "name": "openModal",
+                "type": "Common.openModal",
+                "payload": {
+                  "byDrawer": { "mask": true },
+                  "Form": {
+                    "type": "edit",
+                    "model": "pet.categories",
+                    "params": { "id": "{{id}}" }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "style": "danger",
+            "title": "Delete",
+            "icon": "icon-trash-2",
+            "action": [
+              {
+                "name": "Confirm",
+                "type": "Common.confirm",
+                "payload": {
+                  "title": "Please confirm to delete [{{ category_name }}]",
+                  "content": "This action is irreversible! The category will be permanently deleted."
+                }
+              },
+              { "name": "Delete", "type": "Table.delete", "payload": {} }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "fields": {
+    "filter": {
+      "Category Name": {
+        "bind": "where.category_name.match",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Category Name" }
+        }
+      }
+    },
+    "table": {
+      "ID": {
+        "bind": "id",
+        "view": { "type": "Text" }
+      },
+      "Category Name": {
+        "bind": "category_name",
+        "view": { "type": "Text", "props": { "weight": "medium" } },
+        "edit": { "type": "Input", "props": { "placeholder": "Category Name" } }
+      },
+      "Description": {
+        "bind": "description",
+        "view": { "type": "Text" },
+        "edit": {
+          "type": "TextArea",
+          "props": { "placeholder": "Description" }
+        }
+      }
+    }
+  }
+}

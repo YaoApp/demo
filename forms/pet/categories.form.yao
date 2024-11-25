@@ -1,0 +1,70 @@
+// pet/categories.form.yao
+{
+  "name": "Pet Category",
+  "action": { "bind": { "table": "pet.categories" } },
+  "layout": {
+    "primary": "id",
+    "actions": [
+      {
+        "title": "Save",
+        "icon": "icon-save",
+        "style": "primary",
+        "showWhenAdd": true,
+        "action": [{ "name": "Submit", "type": "Form.submit" }]
+      },
+      {
+        "title": "Delete",
+        "icon": "icon-trash-2",
+        "style": "danger",
+        "action": [
+          {
+            "name": "Confirm",
+            "type": "Common.confirm",
+            "payload": {
+              "title": "Please confirm to delete [{{ category_name }}]",
+              "content": "This action is irreversible!"
+            }
+          },
+          { "name": "Delete", "type": "Table.delete", "payload": {} }
+        ]
+      },
+      {
+        "title": "Close",
+        "icon": "icon-arrow-left",
+        "showWhenAdd": true,
+        "showWhenView": true,
+        "action": [
+          { "name": "CloseModal", "type": "Common.closeModal", "payload": {} }
+        ]
+      }
+    ],
+    "form": {
+      "sections": [
+        {
+          "columns": [
+            { "name": "Category Name", "width": 24 },
+            { "name": "Description", "width": 24 }
+          ]
+        }
+      ]
+    }
+  },
+  "fields": {
+    "form": {
+      "Category Name": {
+        "bind": "category_name",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Input the name of the category" }
+        }
+      },
+      "Description": {
+        "bind": "description",
+        "edit": {
+          "type": "TextArea",
+          "props": { "placeholder": "Input the description of the category" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+// pets.form.yao
+{
+  "name": "Pet",
+  "action": { "bind": { "table": "pets" } },
+  "layout": {
+    "primary": "id",
+    "actions": [
+      {
+        "title": "Save",
+        "icon": "icon-save",
+        "showWhenAdd": true,
+        "style": "primary",
+        "action": [{ "name": "Submit", "type": "Form.submit" }]
+      },
+      {
+        "title": "Delete",
+        "icon": "icon-trash-2",
+        "style": "danger",
+        "action": [
+          {
+            "name": "Confirm",
+            "type": "Common.confirm",
+            "payload": {
+              "title": "Please confirm to delete [{{ pet_name }}]",
+              "content": "This action is irreversible!"
+            }
+          },
+          { "name": "Delete", "type": "Table.delete", "payload": {} }
+        ]
+      },
+      {
+        "title": "Close",
+        "icon": "icon-arrow-left",
+        "showWhenAdd": true,
+        "showWhenView": true,
+        "action": [
+          { "name": "CloseModal", "type": "Common.closeModal", "payload": {} }
+        ]
+      }
+    ],
+    "form": {
+      "sections": [
+        {
+          "columns": [
+            { "name": "Pet Name", "width": 24 },
+            { "name": "Category ID", "width": 12 },
+            { "name": "Age", "width": 12 },
+            { "name": "Breed", "width": 24 },
+            { "name": "Description", "width": 24 }
+          ]
+        }
+      ]
+    }
+  },
+  "fields": {
+    "form": {
+      "Pet Name": {
+        "bind": "pet_name",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Input the name of the pet" }
+        }
+      },
+      "Category ID": {
+        "bind": "category_id",
+        "edit": {
+          "type": "InputNumber",
+          "props": { "placeholder": "Input the category ID of the pet" }
+        }
+      },
+      "Age": {
+        "bind": "age",
+        "edit": {
+          "type": "InputNumber",
+          "props": { "placeholder": "Input the age of the pet" }
+        }
+      },
+      "Breed": {
+        "bind": "breed",
+        "edit": {
+          "type": "Input",
+          "props": { "placeholder": "Input the breed of the pet" }
+        }
+      },
+      "Description": {
+        "bind": "description",
+        "edit": {
+          "type": "TextArea",
+          "props": { "placeholder": "Input the description of the pet" }
+        }
+      }
+    }
+  }
+}
