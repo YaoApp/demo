@@ -12,6 +12,23 @@
         "name": "Generator",
         "path": "/iframe?src=https://moapi.ai/iframe/yaoapp", // For production
         "icon": "material-mark_chat_unread"
+      },
+      {
+        "name": "Pets", // Menu Item Name
+        "path": "/x/Table/pets", // Table Route
+        "icon": { "name": "material-pets", "size": 22 }, // Material Icon
+        "children": [
+          {
+            "name": "Pets",
+            "path": "/x/Table/pets",
+            "icon": { "name": "material-pet_supplies", "size": 22 }
+          },
+          {
+            "name": "Pet Categories",
+            "path": "/x/Table/pet.categories",
+            "icon": { "name": "material-category", "size": 22 }
+          }
+        ]
       }
     ],
     "setting": [
