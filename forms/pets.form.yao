@@ -86,7 +86,12 @@
         "bind": "description",
         "edit": {
           "type": "TextArea",
-          "props": { "placeholder": "Input the description of the pet" }
+          "props": {
+            "ai": {
+              "placeholder": "Input the prompt, and I will generate the description for you."
+            },
+            "placeholder": "Input the description of the pet"
+          }
         }
       }
     }
