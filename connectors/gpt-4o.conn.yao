@@ -1,0 +1,9 @@
+{
+  "label": "Model gpt-4o", // The name of the model for display
+  "type": "openai", // The type of the connector, openai only for now
+  "options": {
+    "model": "gpt-4o", // The AI Model name
+    "key": "$ENV.OPENAI_API_KEY" // The API key, supports environment variables
+    // "proxy": "http://ip:port" // Optional proxy server, if needed
+  }
+}

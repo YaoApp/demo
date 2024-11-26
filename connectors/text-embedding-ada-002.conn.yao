@@ -1,0 +1,8 @@
+{
+  "label": "text-embedding-ada-002",
+  "type": "openai",
+  "options": {
+    "model": "text-embedding-ada-002",
+    "key": "$ENV.OPENAI_API_KEY"
+  }
+}
