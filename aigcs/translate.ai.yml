@@ -1,0 +1,6 @@
+name: Translate
+connector: gpt-4o # Specify the connector widget ID
+prompts:
+  - role: system
+    content: |
+      - Translate the message to French.
