@@ -45,7 +45,7 @@ this.root=document.body;const __self=this;this.store=new __sui_store(this.root),
 
 
 <script name="config" type="json">
-{"api":null,"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0}
+{"root":"/","title":"","guard":"","cacheStore":"","cache":0,"dataCache":0,"api":null}
 </script>
 
 
@@ -71,7 +71,7 @@ this.root=document.body;const __self=this;this.store=new __sui_store(this.root),
 
 
 <script name="imports" type="json">
-{"comp__pet_header":"/pet/header","comp__pet_footer":"/pet/footer"}
+{"comp__pet_footer":"/pet/footer","comp__pet_header":"/pet/header"}
 </script>
 
 </body></html>

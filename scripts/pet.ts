@@ -1,4 +1,4 @@
-import { Process, QueryParam, SearchResult, log } from "@yao/runtime";
+import { Process, QueryParam, PagedData, log } from "@yao/runtime";
 
 type Option = { label: string; value: number | string };
 
@@ -38,7 +38,9 @@ function FetchCategoryOptions(): Option[] {
  */
 function BeforeSearch(query: QueryParam, page, pagesize: number) {
   // Join the category table to get the category name.
-  query.withs = { category: { query: { select: ["id", "category_name"] } } };
+  query.withs = {
+    category: { name: "category", query: { select: ["id", "category_name"] } },
+  };
   console.log(query, page, pagesize);
   return [query, page, pagesize];
 }
@@ -48,7 +50,7 @@ function BeforeSearch(query: QueryParam, page, pagesize: number) {
  * @param response Search result of the pet search process.
  * @returns SearchResult<Record<string, any>> Modified search result.
  */
-function AfterSearch(response: SearchResult<Record<string, any>>) {
+function AfterSearch(response: PagedData) {
   // Flatten the category object and add the category name to the pet object.
   response.data?.forEach((pet: Record<string, any>) => {
     pet.category_name = pet.category.category_name;
